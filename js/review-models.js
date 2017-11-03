@@ -25,7 +25,8 @@ var TodoItem = Backbone.Model.extend({
         attrs = _.pick(attrs, 'desc', 'status');
         return {todo: attrs};
     },
-    idAttribute: '_id'
+    idAttribute: '_id',
+    url: 'todos/todos.json'
 });
 
 // var todoItem = new TodoItem();
@@ -33,17 +34,17 @@ var TodoItem = Backbone.Model.extend({
 // console.log(todoItem.attributes);
 
 // Instantiating Models doesn’t call Parse by Default
-var todoItem = new TodoItem({
-    todo:{ id:1, description: 'Pick up milk', status: 'incomplete' }},
-    {parse:true}
-);
+// var todoItem = new TodoItem({
+//     todo:{ id:1, description: 'Pick up milk', status: 'incomplete' }},
+//     {parse:true}
+// );
 
-console.log(todoItem.attributes);
+// console.log(todoItem.attributes);
 
-//Sending JSON back to the Server
+// Sending JSON back to the Server
 // todoItem.set({description:'Pick up cookies'});
-todoItem.toJSON();
-todoItem.save();
+// todoItem.toJSON();
+// todoItem.save();
 
 // Render View with Attributes
 var TodoView = Backbone.View.extend({
@@ -55,4 +56,4 @@ var TodoView = Backbone.View.extend({
 // Unconventional ID Attribute
 var todoItem = new TodoItem({id:1});
 todoItem.fetch();
-todoItem.id;
+console.log(todoItem.id);
