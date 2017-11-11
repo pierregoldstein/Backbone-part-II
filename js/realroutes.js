@@ -19,7 +19,7 @@ TodoRouter.navigate('search/milk/p2',{trigger: true});
 
 var TodoRouter = new (Backbone.Router.extend({
     routes: {
-        'search/:query(/p:page)':'search', //Optional trailing slash
+        'search/:query(/p:page)(/)':'search', //Optional trailing slash
     },
     search:function(query,page){
         page = page || 0;
