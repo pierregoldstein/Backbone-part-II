@@ -64,8 +64,24 @@
         </script>
     </h1>
     <hr/>
-
-    <script src="/js/varyingviews.js"></script>
+    <!-- Create an Ajax form for creating new Todos -->
+    <form action="./todos" method="POST">
+        <input name=description value="What do you need?"/>
+        <button>Save</button>
+    </form>
+    <script src="/js/WorkingWithForms.js"></script>
+    <!-- Wait, shouldn’t
+    we be creating Todos
+    using Backbone?
+    <script>
+        $('button').click(function(e){
+            e.preventDefault();
+            var uri = $('form').attr('action');
+            var description = $('input[name=description]').val();
+            $.post(uri,{description: description});
+        });
+    </script> -->
+    <!-- <script src="/js/varyingviews.js"></script> -->
     <!-- Using Existing DOM Elements -->
     <!-- <div class="todo"></div> -->
     <div>
