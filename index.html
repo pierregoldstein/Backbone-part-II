@@ -59,34 +59,59 @@
 <body>
     <h1>BackboneJS pt. II
         <script>
-            var time  = new Date();
+            var time = new Date();
             document.write(time.getDate());
         </script>
     </h1>
     <hr/>
     <!-- Create an Ajax form for creating new Todos -->
-    <form action="./todos" method="POST">
-        <input name=description value="What do you need?"/>
+    <!-- <form action="./todos" method="POST">
+        <input name=description value="What do you need?" />
         <button>Save</button>
     </form>
-    <script src="/js/WorkingWithForms.js"></script>
-    <!-- Wait, shouldn’t
-    we be creating Todos
-    using Backbone?
+
+    <ul>
+        <li>
+            <a href="/completed" data-internal="true">Show Completed</a>
+        </li>
+        <li>
+            <a href="/support">Support</a>
+        </li>
+    </ul> -->
+    <!-- Add Initial HTML
+    to the body -->
+    <h1>ToDo List!</h1>
+    <div id="app"></div>
+    <script src="/js/AppOrgnanization.js">
+        var bootstrap = {
+            todos: [{
+                    id: 1,
+                    description: "Pickup Milk.",
+                    status: "complete"
+                },
+                {
+                    id: 2,
+                    description: "Pickup Kids.",
+                    status: "incomplete"
+                },
+            ]
+        }
+        $(function () {
+            // App.render();
+            App.start(bootstrap);
+        })
+    </script>
+    <!-- Using plain jQuery -->
+    <!-- What if we wanted backbone to handle this? -->
     <script>
-        $('button').click(function(e){
-            e.preventDefault();
-            var uri = $('form').attr('action');
-            var description = $('input[name=description]').val();
-            $.post(uri,{description: description});
-        });
-    </script> -->
-    <!-- <script src="/js/varyingviews.js"></script> -->
-    <!-- Using Existing DOM Elements -->
-    <!-- <div class="todo"></div> -->
-    <div>
+        // $('a').click(function(e){
+        //     e.preventDefault();
+        //     Backbone.history.navigate(e.target.pathname, {trigger:true});
+        // });
+    </script>
+    <!-- <div>
         <script src='attack.js' />
-    </div>
+    </div> -->
 </body>
 
 </html>

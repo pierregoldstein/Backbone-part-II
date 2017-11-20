@@ -1,6 +1,6 @@
 /*** Convert to using Backbone ***/
 var TodoItem = Backbone.Model.extend({
-    urlRoot:'/todos'
+    urlRoot:'/todos/todos.json'
 });
 var todoItems = new TodoItem({
     description:"What do you need to do?"
