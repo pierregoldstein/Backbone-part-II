@@ -31,6 +31,8 @@
 
     <script src="/js/src/underscore-min.js"></script>
 
+    <script src="/js/src/mustache.min.js"></script>
+
     <script src="/js/src/backbone-min.js"></script>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -64,54 +66,18 @@
         </script>
     </h1>
     <hr/>
-    <!-- Create an Ajax form for creating new Todos -->
-    <!-- <form action="./todos" method="POST">
-        <input name=description value="What do you need?" />
-        <button>Save</button>
-    </form>
-
-    <ul>
-        <li>
-            <a href="/completed" data-internal="true">Show Completed</a>
-        </li>
-        <li>
-            <a href="/support">Support</a>
-        </li>
-    </ul> -->
-    <!-- Add Initial HTML
-    to the body -->
     <h1>ToDo List!</h1>
     <div id="app"></div>
-    <script src="/js/AppOrgnanization.js">
-        var bootstrap = {
-            todos: [{
-                    id: 1,
-                    description: "Pickup Milk.",
-                    status: "complete"
-                },
-                {
-                    id: 2,
-                    description: "Pickup Kids.",
-                    status: "incomplete"
-                },
-            ]
-        }
-        $(function () {
-            // App.render();
-            App.start(bootstrap);
-        })
+    <!-- Backbone.localStorage -->
+    <scirpt src="/js/src/backbone.localStorage-min.js">
+        var TodoItems = Backbone.Collection.extend({
+            model: TodoItem,
+            localStorage:  new Backbone.LocalStorage("TodoItems")
+        });
+    </scirpt>
+    <script src="/js/CustomizingBackbone.js">
     </script>
-    <!-- Using plain jQuery -->
-    <!-- What if we wanted backbone to handle this? -->
-    <script>
-        // $('a').click(function(e){
-        //     e.preventDefault();
-        //     Backbone.history.navigate(e.target.pathname, {trigger:true});
-        // });
-    </script>
-    <!-- <div>
-        <script src='attack.js' />
-    </div> -->
+
 </body>
 
 </html>

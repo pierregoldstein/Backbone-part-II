@@ -93,9 +93,9 @@ var App = new /* Handle Links Outside of Backbone Views */ (Backbone.View.extend
 where everything is stored*/
 App.Models.TodoItem = Backbone.Model.extend({});
 App.Views.TodoItemView = Backbone.View.extend({});
-App.Collections.TodoItems = Backbone.Collection.extend({});
+App.Collection.TodoItems = Backbone.Collection.extend({});
 App.Views.TodoItemView = Backbone.View.extend({});
-App.TodoRouter = Backbone.Routers.extend({}); //Store one-off objects on App
+App.TodoRouter = Backbone.Router.extend({}); //Store one-off objects on App
 
 var todoItem = new App.Models.TodoItem({
     urlRoot: '/todos'
